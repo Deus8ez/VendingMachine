@@ -10,6 +10,7 @@ namespace VendingMachine
         private List<int> tengeBills = new List<int>();
         private int orderedCoffee { get; set; }
         private int payment { get; set; }
+        private int insertedBill { get; set; }
         private int changeType { get; set; }
         private List<int> resChange { get; set; }
         private string[] coffeeTypes = new string[] { "Capuccino", "Latte", "Americana" };
@@ -52,7 +53,7 @@ namespace VendingMachine
                     Console.WriteLine("Внесите купюру (500, 1000, 2000, 5000тг)\n Введите 0 для выхода");
                     try
                     {
-                        payment += int.Parse(Console.ReadLine());
+                        insertedBill = int.Parse(Console.ReadLine());
                     }
                     catch (FormatException)
                     {
@@ -60,20 +61,22 @@ namespace VendingMachine
                         continue;
                     }
 
-                    if (payment == 0)
+                    if (insertedBill == 0)
                     {
                         break;
                     }
 
-                    if (!_machine.IsValidBill(payment))
+                    if (!_machine.IsValidBill(insertedBill))
                     {
                         Console.WriteLine("Внесите нужную купюру");
                         continue;
                     }
 
+                    payment += insertedBill;
+
                     if (!_machine.IsEnough(coffeeTypes[orderedCoffee], payment))
                     {
-                        Console.WriteLine("Недостаточно средств. Внесите еще");
+                        Console.WriteLine("Ваш баланс: " + payment + "\nНедостаточно средств. Внесите еще");
                         continue;
                     } else
                     {
