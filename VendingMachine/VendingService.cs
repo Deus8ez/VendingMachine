@@ -26,7 +26,7 @@ namespace VendingMachine
                 Console.WriteLine("Выберите кофе:\n1)Каппучино 600тг\n2)Латте 850тг\n3)Американа 900тг\nВведите \"0\" для выхода");
                 try
                 {
-                    orderedCoffee = Int16.Parse(Console.ReadLine()) - 1;
+                    orderedCoffee = int.Parse(Console.ReadLine()) - 1;
                 }
                 catch (FormatException)
                 {
@@ -52,7 +52,7 @@ namespace VendingMachine
                     Console.WriteLine("Внесите купюру (500, 1000, 2000, 5000тг)\n Введите 0 для выхода");
                     try
                     {
-                        payment += Int16.Parse(Console.ReadLine());
+                        payment += int.Parse(Console.ReadLine());
                     }
                     catch (FormatException)
                     {
@@ -89,7 +89,7 @@ namespace VendingMachine
 
                 try
                 {
-                    changeType = Int16.Parse(Console.ReadLine()) - 1;
+                    changeType = int.Parse(Console.ReadLine()) - 1;
                 }
                 catch (FormatException)
                 {
