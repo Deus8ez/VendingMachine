@@ -102,11 +102,9 @@ namespace VendingMachine
                     break;
                 }
 
-
                 resChange = _machine.EstimateAndGiveChange(coffeeTypes[orderedCoffee], payment, out tengeBills, changeType);
 
-                Console.WriteLine(" Возьмите сдачу:");
-                Console.WriteLine("-----------------");
+                Console.WriteLine(" Возьмите сдачу:\n-----------------");
                 for (int i = 0; i < resChange.Count; i++)
                 {
                     Console.WriteLine(i + 1 + ") " + resChange[i] + "tg");

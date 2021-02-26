@@ -45,7 +45,7 @@ namespace VendingMachine
             int change = ReturnChange(drinkName, money);
             int i = 0;
 
-            // поиск ближайшей меньшей или одинаковой купюры
+            // поиск ближайшей меньшей или такой же купюры
             while (i < tengeRange.Length)
             {
                 if (tengeRange[i] <= change)
@@ -56,7 +56,7 @@ namespace VendingMachine
                 i++;
             }
 
-            // расчет сдачи с учетом распределения changeType
+            // расчет сдачи с учетом распределения сдачи (changeType)
             while (i < tengeRange.Length && change != 0)
             {
                 try
