@@ -7,7 +7,7 @@ namespace VendingMachine
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Greetings");
+            Console.WriteLine("Greetings, customer!");
             Machine machine = new Machine();
             VendingService vender = new VendingService(machine);
             vender.StartVending();
